@@ -28,6 +28,7 @@
       <li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
       <li class="header">MASTER</li>
       <li><a href="{{ route('departments.index') }}"><i class="fa fa-building-o"></i> <span>Departments</span></a></li>
+      <li><a href="{{ route('accountants.index') }}"><i class="fa fa-balance-scale"></i> <span>Accountants</span></a></li>
     </ul>
   </section>
   <!-- /.sidebar -->

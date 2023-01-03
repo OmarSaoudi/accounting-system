@@ -13,4 +13,9 @@ class Day extends Model
     protected $table = 'days';
     public $translatable = ['name'];
     protected $fillable =['name'];
+
+    public function accountants()
+    {
+        return $this->belongsToMany(Accountant::class,'accountant_day');
+    }
 }
