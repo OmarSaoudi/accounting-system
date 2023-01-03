@@ -27,6 +27,7 @@
       <li class="header">MAIN NAVIGATION</li>
       <li><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
       <li class="header">MASTER</li>
+      <li><a href="{{ route('departments.index') }}"><i class="fa fa-building-o"></i> <span>Departments</span></a></li>
     </ul>
   </section>
   <!-- /.sidebar -->

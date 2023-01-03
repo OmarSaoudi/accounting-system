@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\{
+    Departments\DepartmentController,
+};
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +21,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', fn () => redirect()->route('login'));
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])->group(function () {
+
     Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
+
+    Route::resource('departments', DepartmentController::class);
+    Route::post('delete_all_d', [DepartmentController::class, 'delete_all_d'])->name('delete_all_d');
+
 });
