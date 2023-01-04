@@ -41,6 +41,7 @@ class EmployeeRepository implements EmployeeRepositoryInterface{
             $employees->activity = $request->activity;
             $employees->rcn = $request->rcn;
             $employees->nif = $request->nif;
+            $employees->nic = $request->nic;
             $employees->art = $request->art;
             $employees->description = $request->description;
             $employees->status = $request->status;
@@ -88,6 +89,7 @@ class EmployeeRepository implements EmployeeRepositoryInterface{
             $employees->activity = $request->activity;
             $employees->rcn = $request->rcn;
             $employees->nif = $request->nif;
+            $employees->nic = $request->nic;
             $employees->art = $request->art;
             $employees->description = $request->description;
             $employees->status = $request->status;

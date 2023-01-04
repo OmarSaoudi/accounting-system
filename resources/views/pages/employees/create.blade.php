@@ -107,7 +107,7 @@
                              <div class="col-md-4">
                                 <div class="form-group">
                                   <label>Activity</label>
-                                  <input type="text" name="activity" value="{{ old('phone') }}" class="form-control" required>
+                                  <input type="text" name="activity" value="{{ old('activity') }}" class="form-control" required>
                                   <span class="help-block with-errors"></span>
                                 </div>
                             </div>
@@ -116,21 +116,28 @@
 
                         {{-- 4 --}}
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label>NIF</label>
                                     <input type="text" name="nif" value="{{ old('nif') }}" class="form-control" required>
                                     <span class="help-block with-errors"></span>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>NIC</label>
+                                    <input type="text" name="nic" value="{{ old('nic') }}" class="form-control" required>
+                                    <span class="help-block with-errors"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
                                 <div class="form-group">
                                   <label>RCN</label>
                                   <input type="text" name="rcn" value="{{ old('rcn') }}" class="form-control" required>
                                   <span class="help-block with-errors"></span>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label>ART</label>
                                     <input type="text" name="art" value="{{ old('art') }}" class="form-control" required>

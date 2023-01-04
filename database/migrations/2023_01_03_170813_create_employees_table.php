@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('phone')->nullable();//3
             $table->string('activity')->nullable();//3
             $table->string('nif')->nullable();//4
+            $table->string('nic')->nullable();//4
             $table->string('rcn')->nullable();//4
             $table->string('art')->nullable();//4
             $table->text('description')->nullable();//6

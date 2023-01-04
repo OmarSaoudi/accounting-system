@@ -23,6 +23,7 @@ class EmployeeTableSeeder extends Seeder
         $employees->phone = '0666447689';
         $employees->activity = 'Activity';
         $employees->nif = '19980665736222';
+        $employees->nic = '19980665736333';
         $employees->rcn = '19990666447689';
         $employees->art = '20000658494204';
         $employees->description = 'Employee';

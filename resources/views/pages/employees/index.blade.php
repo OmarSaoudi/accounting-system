@@ -40,13 +40,12 @@
                 <th>Department</th>
                 <th>Activity</th>
                 <th>NIF</th>
+                <th>NIC</th>
                 <th>RCN</th>
                 <th>ART</th>
                 <th>Wilaya</th>
-                <th>Gender</th>
                 <th>Address</th>
                 <th>Phone</th>
-                <th>Date Of Birth</th>
                 <th>Joining Date</th>
                 <th>Status</th>
                 <th>Operation</th>
@@ -60,13 +59,12 @@
                 <td>{{ $employee->department->name }}</td>
                 <td>{{ $employee->activity }}</td>
                 <td>{{ $employee->nif }}</td>
+                <td>{{ $employee->nic }}</td>
                 <td>{{ $employee->rcn }}</td>
                 <td>{{ $employee->art }}</td>
                 <td>{{ $employee->wilaya->name }}</td>
-                <td>{{ $employee->gender->name }}</td>
                 <td>{{ $employee->address }}</td>
                 <td>{{ $employee->phone }}</td>
-                <td>{{ $employee->date_birth }}</td>
                 <td>{{ $employee->joining_date }}</td>
                 <td>
                     @if($employee->status == 'A') Active
@@ -81,9 +79,9 @@
                           <span class="sr-only">Toggle Dropdown</span>
                         </button>
                         <ul class="dropdown-menu" role="menu">
-                          <li><a href="{{ route('employees.edit',$employee->id) }}" class="btn btn-primary btn-sm" role="button" aria-pressed="true"><i class="fa fa-edit"></i></a></li>
-                          <li><a class="btn btn-info btn-sm" href="{{ route('employees.show',$employee->id) }}"><i class="fa fa-eye"></i></a></li>
-                          <li><a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#DeleteEmployee{{ $employee->id }}"><i class="fa fa-trash"></i></a></li>
+                          <li><a href="{{ route('employees.edit',$employee->id) }}" aria-pressed="true"><i style="color:blue" class="fa fa-edit"></i> Edit Employee</a></li>
+                          <li><a href="{{ route('employees.show',$employee->id) }}"><i style="color:rgb(76, 132, 134)" class="fa fa-eye"></i> Show Employee</a></li>
+                          <li><a data-toggle="modal" data-target="#DeleteEmployee{{ $employee->id }}"><i style="color:rgb(255, 0, 0)" class="fa fa-trash"></i> Delete Employee</a></li>
                         </ul>
                     </div>
                 </td>
@@ -98,13 +96,12 @@
                 <th>Department</th>
                 <th>Activity</th>
                 <th>NIF</th>
+                <th>NIC</th>
                 <th>RCN</th>
                 <th>ART</th>
                 <th>Wilaya</th>
-                <th>Gender</th>
                 <th>Address</th>
                 <th>Phone</th>
-                <th>Date Of Birth</th>
                 <th>Joining Date</th>
                 <th>Status</th>
                 <th>Operation</th>
