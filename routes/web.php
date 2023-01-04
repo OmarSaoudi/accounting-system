@@ -3,6 +3,7 @@
 use App\Http\Controllers\{
     Departments\DepartmentController,
     Accountants\AccountantController,
+    Employees\EmployeeController,
 };
 
 use Illuminate\Support\Facades\Route;
@@ -29,5 +30,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
     Route::post('delete_all_d', [DepartmentController::class, 'delete_all_d'])->name('delete_all_d');
 
     Route::resource('accountants', AccountantController::class);
+
+    Route::resource('employees', EmployeeController::class);
+
 
 });

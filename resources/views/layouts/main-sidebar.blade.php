@@ -29,6 +29,12 @@
       <li class="header">MASTER</li>
       <li><a href="{{ route('departments.index') }}"><i class="fa fa-building-o"></i> <span>Departments</span></a></li>
       <li><a href="{{ route('accountants.index') }}"><i class="fa fa-balance-scale"></i> <span>Accountants</span></a></li>
+      <li class="treeview">
+        <a href="#"><i class="fa fa-users"></i> <span>Employee</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <ul class="treeview-menu">
+          <li><a href="{{ route('employees.index') }}"><i class="fa fa-users"></i> <span>Employee</span></a></li>
+        </ul>
+      </li>
     </ul>
   </section>
   <!-- /.sidebar -->

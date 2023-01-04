@@ -148,7 +148,7 @@
                                  <select name="wilaya_id" class="form-control" required>
                                     <option value="" selected disabled>Select Wilaya</option>
                                     @foreach ($wilayas as $wilaya)
-                                        <option value="{{ $wilaya->id }}" {{ $accountants->wilaya_id == $wilaya->id ? 'selected' : '' }}>{{ $wilaya->name }}</option>
+                                        <option value="{{ $wilaya->id }}" {{ $accountants->wilaya_id == $wilaya->id ? 'selected' : '' }}>{{ $wilaya->id }} {{ $wilaya->name }}</option>
                                     @endforeach
                                  </select>
                                  <span class="help-block with-errors"></span>
