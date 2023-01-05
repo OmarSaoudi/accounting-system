@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Repository\Departments;
+
 use App\Models\Department;
-
-
+use App\Models\Employee;
+use App\Models\Fee;
 class DepartmentRepository implements DepartmentRepositoryInterface{
 
     public function GetDepartments()
@@ -51,13 +52,22 @@ class DepartmentRepository implements DepartmentRepositoryInterface{
     {
 
         try {
-            $departments = Department::findOrFail($request->id)->delete();
-            return redirect()->route('departments.index');
+            $employees = Employee::where('department_id',$request->id)->pluck('department_id');
+            $fees = Fee::where('department_id',$request->id)->pluck('department_id');
+
+            if($employees->count() == 0 && $fees->count() == 0){
+                $departments = Department::findOrFail($request->id)->delete();
+                return redirect()->route('departments.index');
+            }
+            else{
+                return redirect()->route('departments.index');
+            }
         }
 
         catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
+
     }
 
     public function delete_all_d($request)

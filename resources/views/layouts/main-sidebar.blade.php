@@ -32,7 +32,15 @@
       <li class="treeview">
         <a href="#"><i class="fa fa-users"></i> <span>Employee</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
         <ul class="treeview-menu">
-          <li><a href="{{ route('employees.index') }}"><i class="fa fa-users"></i> <span>Employee</span></a></li>
+          <li><a href="{{ route('employees.index') }}"><i class="fa fa-square"></i> <span>Employee</span></a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#"><i class="fa fa-money"></i> <span>Fees</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <ul class="treeview-menu">
+          <li><a href="{{ route('fees.index') }}"><i class="fa fa-square"></i> <span>Fees</span></a></li>
+          <li><a href="{{ route('fee_invoices.index') }}"><i class="fa fa-square"></i> <span>Fee Invoices</span></a></li>
+          <li><a href="{{ route('receipt_employees.index') }}"><i class="fa fa-square"></i> <span>Receipt Employees</span></a></li>
         </ul>
       </li>
     </ul>

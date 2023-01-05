@@ -29,4 +29,9 @@ class Employee extends Model
     {
         return $this->belongsTo(Wilaya::class);
     }
+
+    public function employee_account()
+    {
+        return $this->hasMany('App\Models\EmployeeAccount', 'employee_id');
+    }
 }

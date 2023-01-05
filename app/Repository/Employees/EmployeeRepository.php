@@ -48,6 +48,7 @@ class EmployeeRepository implements EmployeeRepositoryInterface{
             $employees->gender_id = $request->gender_id;
             $employees->wilaya_id = $request->wilaya_id;
             $employees->department_id = $request->department_id;
+            $employees->year = $request->year;
             $employees->save();
 
             DB::commit();
@@ -96,6 +97,7 @@ class EmployeeRepository implements EmployeeRepositoryInterface{
             $employees->gender_id = $request->gender_id;
             $employees->wilaya_id = $request->wilaya_id;
             $employees->department_id = $request->department_id;
+            $employees->year = $request->year;
             $employees->save();
 
             return redirect()->route('employees.index');

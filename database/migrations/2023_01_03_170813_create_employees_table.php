@@ -30,6 +30,7 @@ return new class extends Migration
             $table->foreignId('wilaya_id')->constrained('wilayas')->cascadeOnDelete();//5
             $table->foreignId('gender_id')->constrained('genders')->cascadeOnDelete();//5
             $table->foreignId('department_id')->constrained('departments')->cascadeOnDelete();//5
+            $table->string('year');//5
             $table->timestamps();
         });
     }

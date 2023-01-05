@@ -151,7 +151,7 @@
 
                         {{-- 5 --}}
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                    <label>Departments</label>
                                    <select name="department_id" class="form-control" required>
@@ -163,7 +163,7 @@
                                    <span class="help-block with-errors"></span>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Genders</label>
                                     <select name="gender_id" class="form-control" required>
@@ -175,7 +175,7 @@
                                     <span class="help-block with-errors"></span>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
                                    <label>Wilayas</label>
                                    <select name="wilaya_id" class="form-control" required>
@@ -183,6 +183,21 @@
                                       @foreach ($wilayas as $wilaya)
                                           <option value="{{ $wilaya->id }}" {{ $employees->wilaya_id == $wilaya->id ? 'selected' : '' }}>{{ $wilaya->id }} {{ $wilaya->name }}</option>
                                       @endforeach
+                                   </select>
+                                   <span class="help-block with-errors"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                   <label>Academic Year</label>
+                                   <select name="academic_year" class="form-control" required>
+                                      <option value="" selected disabled>Select Academic Year</option>
+                                      @php
+                                          $current_year = date("Y");
+                                      @endphp
+                                      @for($year=$current_year; $year<=$current_year + 4 ;$year++)
+                                         <option value="{{ $year }}" {{$year == $students->academic_year ? 'selected' : ' '}}>{{ $year }}</option>
+                                      @endfor
                                    </select>
                                    <span class="help-block with-errors"></span>
                                 </div>

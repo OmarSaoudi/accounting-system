@@ -31,6 +31,7 @@ class EmployeeTableSeeder extends Seeder
         $employees->gender_id = 1;
         $employees->wilaya_id = 28;
         $employees->department_id = 1;
+        $employees->year = '2023';
         $employees->save();
     }
 }

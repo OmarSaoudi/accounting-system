@@ -4,6 +4,9 @@ use App\Http\Controllers\{
     Departments\DepartmentController,
     Accountants\AccountantController,
     Employees\EmployeeController,
+    Employees\FeeController,
+    Employees\FeeInvoiceController,
+    Employees\ReceiptEmployeeController,
 };
 
 use Illuminate\Support\Facades\Route;
@@ -32,6 +35,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
     Route::resource('accountants', AccountantController::class);
 
     Route::resource('employees', EmployeeController::class);
+    Route::resource('fees', FeeController::class);
+    Route::resource('fee_invoices', FeeInvoiceController::class);
+    Route::resource('receipt_employees', ReceiptEmployeeController::class);
+
+
 
 
 });
