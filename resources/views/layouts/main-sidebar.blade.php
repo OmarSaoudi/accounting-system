@@ -41,6 +41,7 @@
           <li><a href="{{ route('fees.index') }}"><i class="fa fa-square"></i> <span>Fees</span></a></li>
           <li><a href="{{ route('fee_invoices.index') }}"><i class="fa fa-square"></i> <span>Fee Invoices</span></a></li>
           <li><a href="{{ route('receipt_employees.index') }}"><i class="fa fa-square"></i> <span>Receipt Employees</span></a></li>
+          <li><a href="{{ route('processing_fees.index') }}"><i class="fa fa-square"></i> <span>Processing Fee Students</span></a></li>
         </ul>
       </li>
     </ul>

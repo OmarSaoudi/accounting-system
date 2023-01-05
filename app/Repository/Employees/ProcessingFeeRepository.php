@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\Employees;
 
 use App\Models\ProcessingFee;
-use App\Models\Student;
-use App\Models\StudentAccount;
+use App\Models\Employee;
+use App\Models\EmployeeAccount;
 use Illuminate\Support\Facades\DB;
 
 
@@ -13,7 +13,7 @@ class ProcessingFeeRepository implements ProcessingFeeRepositoryInterface{
     public function GetProcessingFee()
     {
         $processing_fees = ProcessingFee::all();
-        return view('pages.processing_fees.index', compact('processing_fees'));
+        return view('pages.employees.processing_fees.index', compact('processing_fees'));
 
     }
 
@@ -26,21 +26,21 @@ class ProcessingFeeRepository implements ProcessingFeeRepositoryInterface{
             // حفظ البيانات في جدول معالجة الرسوم
             $processing_fees = new ProcessingFee();
             $processing_fees->date = date('Y-m-d');
-            $processing_fees->student_id = $request->student_id;
+            $processing_fees->employee_id = $request->employee_id;
             $processing_fees->amount = $request->debit;
             $processing_fees->description = $request->description;
             $processing_fees->save();
 
             // حفظ البيانات في جدول حساب الطلاب
-            $studentaccount = new StudentAccount();
-            $studentaccount->date = date('Y-m-d');
-            $studentaccount->type = 'processingfee';
-            $studentaccount->student_id = $request->student_id;
-            $studentaccount->processing_id = $processing_fees->id;
-            $studentaccount->debit = 0.00;
-            $studentaccount->credit = $request->debit;
-            $studentaccount->description = $request->description;
-            $studentaccount->save();
+            $employeeaccount = new EmployeeAccount();
+            $employeeaccount->date = date('Y-m-d');
+            $employeeaccount->type = 'processingfee';
+            $employeeaccount->employee_id = $request->employee_id;
+            $employeeaccount->processing_id = $processing_fees->id;
+            $employeeaccount->debit = 0.00;
+            $employeeaccount->credit = $request->debit;
+            $employeeaccount->description = $request->description;
+            $employeeaccount->save();
 
             DB::commit();
             return redirect()->route('processing_fees.index');
@@ -54,14 +54,14 @@ class ProcessingFeeRepository implements ProcessingFeeRepositoryInterface{
 
     public function ShowProcessingFee($id)
     {
-        $students = Student::findorfail($id);
-        return view('pages.processing_fees.create', compact('students'));
+        $employees = Employee::findorfail($id);
+        return view('pages.employees.processing_fees.create', compact('employees'));
     }
 
     public function EditProcessingFee($id)
     {
         $processing_fees = ProcessingFee::findorfail($id);
-        return view('pages.processing_fees.edit', compact('processing_fees'));
+        return view('pages.employees.processing_fees.edit', compact('processing_fees'));
     }
 
     public function UpdateProcessingFee($request)
@@ -73,21 +73,21 @@ class ProcessingFeeRepository implements ProcessingFeeRepositoryInterface{
             // تعديل البيانات في جدول معالجة الرسوم
             $processing_fees = ProcessingFee::findorfail($request->id);;
             $processing_fees->date = date('Y-m-d');
-            $processing_fees->student_id = $request->student_id;
+            $processing_fees->employee_id = $request->employee_id;
             $processing_fees->amount = $request->debit;
             $processing_fees->description = $request->description;
             $processing_fees->save();
 
             // تعديل البيانات في جدول حساب الطلاب
-            $studentaccount = StudentAccount::where('processing_id',$request->id)->first();;
-            $studentaccount->date = date('Y-m-d');
-            $studentaccount->type = 'processingfee';
-            $studentaccount->student_id = $request->student_id;
-            $studentaccount->processing_id = $processing_fees->id;
-            $studentaccount->debit = 0.00;
-            $studentaccount->credit = $request->debit;
-            $studentaccount->description = $request->description;
-            $studentaccount->save();
+            $employeeaccount = EmployeeAccount::where('processing_id',$request->id)->first();;
+            $employeeaccount->date = date('Y-m-d');
+            $employeeaccount->type = 'processingfee';
+            $employeeaccount->employee_id = $request->employee_id;
+            $employeeaccount->processing_id = $processing_fees->id;
+            $employeeaccount->debit = 0.00;
+            $employeeaccount->credit = $request->debit;
+            $employeeaccount->description = $request->description;
+            $employeeaccount->save();
 
             DB::commit();
             return redirect()->route('processing_fees.index');

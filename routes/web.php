@@ -7,6 +7,7 @@ use App\Http\Controllers\{
     Employees\FeeController,
     Employees\FeeInvoiceController,
     Employees\ReceiptEmployeeController,
+    Employees\ProcessingFeeController,
 };
 
 use Illuminate\Support\Facades\Route;
@@ -38,6 +39,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
     Route::resource('fees', FeeController::class);
     Route::resource('fee_invoices', FeeInvoiceController::class);
     Route::resource('receipt_employees', ReceiptEmployeeController::class);
+    Route::resource('processing_fees', ProcessingFeeController::class);
 
 
 
