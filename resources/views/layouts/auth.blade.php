@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>@yield('title')</title>
+  <title>{{ $settings->company_name }} | @yield('title')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="icon" href="" type="image/png">
@@ -27,6 +27,7 @@
 <script src="{{ URL::asset('assets/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <!-- iCheck -->
 <script src="{{ URL::asset('assets/plugins/iCheck/icheck.min.js') }}"></script>
+<script src="{{ URL::asset('assets/js/validator.min.js') }}"></script>
 <script>
   $(function () {
     $('input').iCheck({
@@ -35,6 +36,7 @@
       increaseArea: '20%' /* optional */
     });
   });
+  $('.form-login').validator();
 </script>
 </body>
 </html>

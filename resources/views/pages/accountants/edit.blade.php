@@ -38,7 +38,7 @@
               <h3 class="box-title">Edit Accountant</h3>
           </div>
             <div class="box-body">
-                    <form method="POST" action="{{ route('accountants.update','test') }}" autocomplete="off">
+                    <form method="POST" action="{{ route('accountants.update','test') }}" class="form-accountant" data-toggle="validator" autocomplete="off">
                       @csrf
                       {{ method_field('PATCH') }}
                         {{-- 1 --}}
@@ -193,6 +193,7 @@
 @section('scripts')
 <!-- Select2 -->
 <script src="{{ URL::asset('assets/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
+<script>$('.form-accountant').validator();</script>
 <script>
   $(function () {
     $('.select2').select2()

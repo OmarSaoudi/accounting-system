@@ -20,7 +20,8 @@
 <script src="{{ URL::asset('assets/dist/js/pages/dashboard2.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ URL::asset('assets/dist/js/demo.js') }}"></script>
-
+<!-- Validator -->
+<script src="{{ URL::asset('assets/js/validator.min.js') }}"></script>
 <script>
   function CheckAll(className, elem) {
      var elements = document.getElementsByClassName(className);
@@ -37,7 +38,12 @@
      }
   }
 </script>
-
+<script>
+    function preview(selector, temporaryFile, width = 200)  {
+        $(selector).empty();
+        $(selector).append(`<img src="${window.URL.createObjectURL(temporaryFile)}" width="${width}">`);
+    }
+</script>
 <script>
     $(document).ready(function () {
         $('select[name="grade_id"]').on('change', function () {

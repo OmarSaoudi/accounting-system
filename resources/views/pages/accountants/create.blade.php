@@ -38,7 +38,7 @@
               <h3 class="box-title">Create Accountant</h3>
           </div>
             <div class="box-body">
-                    <form method="POST" action="{{ route('accountants.store') }}" autocomplete="off">
+                    <form method="POST" action="{{ route('accountants.store') }}" class="form-accountant" data-toggle="validator" autocomplete="off">
                       @csrf
                         {{-- 1 --}}
                         <div class="row">
@@ -172,6 +172,7 @@
                               <div class="form-group">
                                   <label>Note</label>
                                   <textarea name="description" class="form-control" placeholder="Enter ..."></textarea>
+                                  <span class="help-block with-errors"></span>
                               </div>
                             </div>
                         </div>
@@ -192,6 +193,7 @@
 @section('scripts')
 <!-- Select2 -->
 <script src="{{ URL::asset('assets/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
+<script>$('.form-accountant').validator();</script>
 <script>
   $(function () {
     $('.select2').select2()

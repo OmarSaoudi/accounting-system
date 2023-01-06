@@ -38,7 +38,7 @@
               <h3 class="box-title">Create Employee</h3>
           </div>
             <div class="box-body">
-                    <form method="POST" action="{{ route('employees.store') }}" autocomplete="off">
+                    <form method="POST" action="{{ route('employees.store') }}" class="form-employee" data-toggle="validator" autocomplete="off">
                       @csrf
                         {{-- 1 --}}
                         <div class="row">
@@ -208,6 +208,7 @@
                               <div class="form-group">
                                   <label>Note</label>
                                   <textarea name="description" class="form-control" placeholder="Enter ...">{{ old('description') }}</textarea>
+                                  <span class="help-block with-errors"></span>
                               </div>
                             </div>
                         </div>
@@ -226,6 +227,7 @@
 @endsection
 
 @section('scripts')
+<script>$('.form-employee').validator();</script>
 <!-- Select2 -->
 <script src="{{ URL::asset('assets/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
 <script>

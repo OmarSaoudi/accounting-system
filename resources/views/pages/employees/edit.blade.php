@@ -38,7 +38,7 @@
               <h3 class="box-title">Edit Employee</h3>
           </div>
             <div class="box-body">
-                      <form method="POST" action="{{ route('employees.update','test') }}" autocomplete="off">
+                      <form method="POST" action="{{ route('employees.update','test') }}" class="form-employee" data-toggle="validator" autocomplete="off">
                         @csrf
                         {{ method_field('PATCH') }}
                         {{-- 1 --}}
@@ -54,7 +54,7 @@
                             <div class="col-md-4">
                               <div class="form-group">
                                  <label>Name English</label>
-                                 <input type="text" name="name_en" value="{{ $employees->getTranslation('name', 'EN') }}" class="form-control" required>
+                                 <input type="text" name="name_en" value="{{ $employees->getTranslation('name', 'en') }}" class="form-control" required>
                                  <span class="help-block with-errors"></span>
                               </div>
                             </div>
@@ -190,13 +190,13 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                    <label>Academic Year</label>
-                                   <select name="academic_year" class="form-control" required>
+                                   <select name="year" class="form-control" required>
                                       <option value="" selected disabled>Select Academic Year</option>
                                       @php
                                           $current_year = date("Y");
                                       @endphp
                                       @for($year=$current_year; $year<=$current_year + 4 ;$year++)
-                                         <option value="{{ $year }}" {{$year == $students->academic_year ? 'selected' : ' '}}>{{ $year }}</option>
+                                         <option value="{{ $year }}" {{$year == $employees->year ? 'selected' : ' '}}>{{ $year }}</option>
                                       @endfor
                                    </select>
                                    <span class="help-block with-errors"></span>
@@ -228,6 +228,7 @@
 @endsection
 
 @section('scripts')
+<script>$('.form-employee').validator();</script>
 <!-- Select2 -->
 <script src="{{ URL::asset('assets/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
 <script>

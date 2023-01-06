@@ -64,21 +64,24 @@
                        <h4 class="modal-title" style="text-align: center">Department Update</h4>
                      </div>
                     <div class="modal-body">
-                     <form action="{{ route('departments.update', 'test') }}" method="POST">
+                     <form action="{{ route('departments.update', 'test') }}" class="form-department" data-toggle="validator" method="POST">
                       {{ method_field('PATCH') }}
                       @csrf
                         <div class="form-group">
                           <input type="hidden" name="id" id="id" value="{{ $department->id }}">
                           <label>Department Name Arabic :</label>
                           <input type="text" name="name" id="name" value="{{ $department->getTranslation('name', 'ar') }}" class="form-control" required>
+                          <span class="help-block with-errors"></span>
                         </div>
                         <div class="form-group">
                           <label>Department Name English :</label>
                           <input type="text" name="name_en" id="name_en" value="{{ $department->getTranslation('name', 'en') }}" class="form-control" required>
+                          <span class="help-block with-errors"></span>
                         </div>
                         <div class="form-group">
                           <label>Note :</label>
                           <input type="text" name="description" id="description" value="{{ $department->description }}" class="form-control">
+                          <span class="help-block with-errors"></span>
                         </div>
                         <div class="modal-footer">
                           <button type="submit" class="btn btn-primary">Save changes</button>
@@ -153,19 +156,22 @@
               <h4 class="modal-title" style="text-align: center">Add Department</h4>
         </div>
         <div class="modal-body">
-          <form action="{{ route('departments.store') }}" method="post">
+          <form action="{{ route('departments.store') }}" class="form-department" data-toggle="validator" method="post">
               @csrf
                 <div class="form-group">
                   <label>Department Name Arabic :</label>
                   <input type="text" name="name" id="name" class="form-control">
+                  <span class="help-block with-errors"></span>
                 </div>
                 <div class="form-group">
                   <label>Department Name English :</label>
                   <input type="text" name="name_en" id="name_en" class="form-control">
+                  <span class="help-block with-errors"></span>
                 </div>
                 <div class="form-group">
                   <label>Note :</label>
                   <input type="text" name="description" id="description" class="form-control">
+                  <span class="help-block with-errors"></span>
                 </div>
                 <div class="modal-footer">
                   <button type="submit" class="btn btn-success">Save changes</button>
@@ -209,12 +215,10 @@
 
 @endsection
 
-
-
-
 @section('scripts')
 <script src="{{ URL::asset('assets/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ URL::asset('assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+<script>$('.form-department').validator();</script>
 <script>
   $(function () {
     $('#example1').DataTable()

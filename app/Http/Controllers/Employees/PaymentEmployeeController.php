@@ -1,85 +1,53 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Employees;
+use App\Http\Controllers\Controller;
 
 use App\Models\PaymentEmployee;
 use Illuminate\Http\Request;
+use App\Repository\Employees\PaymentEmployeeRepositoryInterface;
 
 class PaymentEmployeeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    protected $PaymentEmployee;
+
+    public function __construct(PaymentEmployeeRepositoryInterface $PaymentEmployee)
+    {
+        $this->PaymentEmployee = $PaymentEmployee;
+    }
+
+
     public function index()
     {
-        //
+        return $this->PaymentEmployee->GetPaymentEmployees();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        return $this->PaymentEmployee->StorePaymentEmployees($request);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\PaymentEmployee  $paymentEmployee
-     * @return \Illuminate\Http\Response
-     */
-    public function show(PaymentEmployee $paymentEmployee)
+
+    public function show($id)
     {
-        //
+        return $this->PaymentEmployee->ShowPaymentEmployees($id);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\PaymentEmployee  $paymentEmployee
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(PaymentEmployee $paymentEmployee)
+
+    public function edit($id)
     {
-        //
+        return $this->PaymentEmployee->EditPaymentEmployees($id);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PaymentEmployee  $paymentEmployee
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, PaymentEmployee $paymentEmployee)
+
+    public function update(Request $request)
     {
-        //
+        return $this->PaymentEmployee->UpdatePaymentEmployees($request);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\PaymentEmployee  $paymentEmployee
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(PaymentEmployee $paymentEmployee)
+
+    public function destroy(Request $request)
     {
-        //
+        return $this->PaymentEmployee->DeletePaymentEmployees($request);
     }
 }
