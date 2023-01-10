@@ -9,7 +9,10 @@ use App\Http\Controllers\{
     Employees\ReceiptEmployeeController,
     Employees\ProcessingFeeController,
     Employees\PaymentEmployeeController,
+    Users\UserController,
+    //Users\RoleController,
     SettingController,
+    ProfilePersonlyController,
 };
 
 use Illuminate\Support\Facades\Route;
@@ -45,9 +48,16 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
     Route::resource('payment_employees', PaymentEmployeeController::class);
 
 
+    Route::resource('users', UserController::class);
+    //Route::resource('roles', RoleController::class);
+
 
     Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
     Route::get('/settings/first', [SettingController::class, 'show'])->name('settings.show');
     Route::post('/settings', [SettingController::class, 'update'])->name('settings.update');
+
+
+    Route::resource('profile_personlies', ProfilePersonlyController::class);
+
 
 });

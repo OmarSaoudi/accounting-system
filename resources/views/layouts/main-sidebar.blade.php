@@ -46,6 +46,7 @@
         </ul>
       </li>
       <li><a href="{{ route('settings.index') }}"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
+      <li><a href="{{ route('profile_personlies.index') }}"><i class="fa fa-info"></i> <span>Profile Personly</span></a></li>
     </ul>
   </section>
   <!-- /.sidebar -->
