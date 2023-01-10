@@ -30,9 +30,11 @@
       <li><a href="{{ route('departments.index') }}"><i class="fa fa-building-o"></i> <span>Departments</span></a></li>
       <li><a href="{{ route('accountants.index') }}"><i class="fa fa-balance-scale"></i> <span>Accountants</span></a></li>
       <li class="treeview">
-        <a href="#"><i class="fa fa-users"></i> <span>Employee</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <a href="#"><i class="fa fa-users"></i> <span>Employees</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
         <ul class="treeview-menu">
-          <li><a href="{{ route('employees.index') }}"><i class="fa fa-square"></i> <span>Employee</span></a></li>
+          <li><a href="{{ route('employees.index') }}"><i class="fa fa-square"></i> <span>Employees</span></a></li>
+          <li><a href=""><i class="fa fa-square"></i> <span>Active Employees</span></a></li>
+          <li><a href=""><i class="fa fa-square"></i> <span>Inactive Employee</span></a></li>
         </ul>
       </li>
       <li class="treeview">
