@@ -64,6 +64,7 @@
                                    <input type="radio" name="status" value="A" {{ old('status') == 'A' ? 'checked' : '' }} checked> &nbsp;Active &nbsp;&nbsp;&nbsp;&nbsp;
                                    <input type="radio" name="status" value="I" {{ old('status') == 'I' ? 'checked' : '' }}> &nbsp;Inactive
                                    </span>
+                                   <span class="help-block with-errors"></span>
                                 </div>
                             </div>
                         </div>
@@ -79,12 +80,12 @@
                                </div>
                             </div>
                             <div class="col-md-6">
-                               <div class="form-group">
-                                  <label>Joining Date</label>
-                                  <input type="date" name="joining_date" value="{{ date('Y-m-d') }}" class="form-control" required>
-                                  <span class="help-block with-errors"></span>
-                               </div>
-                            </div>
+                                <div class="form-group">
+                                   <label>Joining Date</label>
+                                   <input type="date" name="joining_date" value="{{ date('Y-m-d') }}" class="form-control" required>
+                                   <span class="help-block with-errors"></span>
+                                </div>
+                             </div>
                         </div>
                         {{-- End 2 --}}
 
@@ -209,7 +210,7 @@
                                   <label>Note</label>
                                   <textarea name="description" class="form-control" placeholder="Enter ...">{{ old('description') }}</textarea>
                                   <span class="help-block with-errors"></span>
-                              </div>
+                               </div>
                             </div>
                         </div>
 

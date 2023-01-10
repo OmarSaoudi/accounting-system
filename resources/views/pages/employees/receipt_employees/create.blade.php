@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
 @section('title')
-    Create Receipt Employee
-
+    Create Receipt Employee   {{ $employees->name }}
+@endsection
 @section('css')
 @endsection
 

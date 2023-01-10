@@ -2,7 +2,7 @@
 
 @section('title')
     Create Payment Employee {{ $employees->name }}
-
+@endsection
 @section('css')
 @endsection
 
