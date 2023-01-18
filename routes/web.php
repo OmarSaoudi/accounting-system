@@ -41,6 +41,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
     Route::resource('accountants', AccountantController::class);
 
     Route::resource('employees', EmployeeController::class);
+    Route::get('employee_active', [EmployeeController::class, 'employee_active']);
+    Route::get('employee_inactive', [EmployeeController::class, 'employee_inactive']);
     Route::resource('fees', FeeController::class);
     Route::resource('fee_invoices', FeeInvoiceController::class);
     Route::resource('receipt_employees', ReceiptEmployeeController::class);

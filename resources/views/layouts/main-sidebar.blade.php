@@ -33,8 +33,8 @@
         <a href="#"><i class="fa fa-users"></i> <span>Employees</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
         <ul class="treeview-menu">
           <li><a href="{{ route('employees.index') }}"><i class="fa fa-square"></i> <span>Employees</span></a></li>
-          <li><a href=""><i class="fa fa-square"></i> <span>Active Employees</span></a></li>
-          <li><a href=""><i class="fa fa-square"></i> <span>Inactive Employee</span></a></li>
+          <li><a href="{{ url('/' . ($page = 'employee_active')) }}"><i class="fa fa-square"></i> <span>Active Employees</span></a></li>
+          <li><a href="{{ url('/' . ($page = 'employee_inactive')) }}"><i class="fa fa-square"></i> <span>Inactive Employee</span></a></li>
         </ul>
       </li>
       <li class="treeview">

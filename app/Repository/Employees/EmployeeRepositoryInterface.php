@@ -25,6 +25,12 @@ interface EmployeeRepositoryInterface{
   // DeleteEmployees
   public function DeleteEmployees($request);
 
+  // employee_active
+  public function employee_active();
+
+  // employee_inactive
+  public function employee_inactive();
+
 }
 
 

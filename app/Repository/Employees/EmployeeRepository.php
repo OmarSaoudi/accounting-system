@@ -122,4 +122,16 @@ class EmployeeRepository implements EmployeeRepositoryInterface{
 
     }
 
+    public function employee_active()
+    {
+        $employees = Employee::where('status', 'A')->get();
+        return view('pages.employees.employee_active', compact('employees'));
+    }
+
+    public function employee_inactive()
+    {
+        $employees = Employee::where('status', 'I')->get();
+        return view('pages.employees.employee_inactive', compact('employees'));
+    }
+
 }

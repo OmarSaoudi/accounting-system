@@ -55,4 +55,14 @@ class EmployeeController extends Controller
         return $this->Employee->DeleteEmployees($request);
     }
 
+    public function employee_active()
+    {
+        return $this->Employee->employee_active();
+    }
+
+    public function employee_inactive()
+    {
+        return $this->Employee->employee_inactive();
+    }
+
 }
