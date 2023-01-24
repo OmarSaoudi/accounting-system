@@ -47,6 +47,19 @@
           <li><a href="{{ route('payment_employees.index') }}"><i class="fa fa-square"></i> <span>Payment Employees</span></a></li>
         </ul>
       </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-bar-chart"></i>
+          <span>Reports</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{{ url('/' . ($page = 'accountants_report')) }}"><i class="fa fa-line-chart"></i> <span>Accountants Reports</span></a></li>
+          <li><a href="{{ url('/' . ($page = 'employees_report')) }}"><i class="fa fa-line-chart"></i> <span>Employees Reports</span></a></li>
+        </ul>
+      </li>
       <li><a href="{{ route('settings.index') }}"><i class="fa fa-cog"></i> <span>Settings</span></a></li>
       <li><a href="{{ route('profile_personlies.index') }}"><i class="fa fa-info"></i> <span>Profile Personly</span></a></li>
     </ul>

@@ -3,12 +3,14 @@
 use App\Http\Controllers\{
     Departments\DepartmentController,
     Accountants\AccountantController,
+    Accountants\AccountantsReportController,
     Employees\EmployeeController,
     Employees\FeeController,
     Employees\FeeInvoiceController,
     Employees\ReceiptEmployeeController,
     Employees\ProcessingFeeController,
     Employees\PaymentEmployeeController,
+    Employees\EmployeesReportController,
     Users\UserController,
     //Users\RoleController,
     SettingController,
@@ -39,6 +41,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
     Route::post('delete_all_d', [DepartmentController::class, 'delete_all_d'])->name('delete_all_d');
 
     Route::resource('accountants', AccountantController::class);
+    Route::get('accountants_report', [AccountantsReportController::class, 'index']);
+    Route::post('search_accountants', [AccountantsReportController::class, 'search_accountants']);
 
     Route::resource('employees', EmployeeController::class);
     Route::get('employee_active', [EmployeeController::class, 'employee_active']);
@@ -48,6 +52,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'])
     Route::resource('receipt_employees', ReceiptEmployeeController::class);
     Route::resource('processing_fees', ProcessingFeeController::class);
     Route::resource('payment_employees', PaymentEmployeeController::class);
+    Route::get('employees_report', [EmployeesReportController::class, 'index']);
+    Route::post('search_employees', [EmployeesReportController::class, 'search_employees']);
 
 
     Route::resource('users', UserController::class);
