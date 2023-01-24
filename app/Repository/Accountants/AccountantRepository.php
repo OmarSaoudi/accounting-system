@@ -7,6 +7,7 @@ use App\Models\Wilaya;
 use App\Models\Day;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\AccountantRequest;
 
 
 class AccountantRepository implements AccountantRepositoryInterface{
@@ -25,7 +26,7 @@ class AccountantRepository implements AccountantRepositoryInterface{
         return view('pages.accountants.create',$data);
     }
 
-    public function StoreAccountants($request)
+    public function StoreAccountants(AccountantRequest $request)
     {
 
 
@@ -75,7 +76,7 @@ class AccountantRepository implements AccountantRepositoryInterface{
         return view('pages.accountants.edit',$data, compact('accountants'));
     }
 
-    public function UpdateAccountants($request)
+    public function UpdateAccountants(AccountantRequest $request)
     {
         try{
             $accountants = Accountant::findorfail($request->id);

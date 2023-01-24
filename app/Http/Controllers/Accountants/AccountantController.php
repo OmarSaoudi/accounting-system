@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Accountant;
 use Illuminate\Http\Request;
+use App\Http\Requests\AccountantRequest;
 use App\Repository\Accountants\AccountantRepositoryInterface;
 
 class AccountantController extends Controller
@@ -28,7 +29,7 @@ class AccountantController extends Controller
         return $this->Accountant->CreateAccountants();
     }
 
-    public function store(Request $request)
+    public function store(AccountantRequest $request)
     {
         return $this->Accountant->StoreAccountants($request);
     }
@@ -43,7 +44,7 @@ class AccountantController extends Controller
         return $this->Accountant->EditAccountants($id);
     }
 
-    public function update(Request $request)
+    public function update(AccountantRequest $request)
     {
         return $this->Accountant->UpdateAccountants($request);
     }

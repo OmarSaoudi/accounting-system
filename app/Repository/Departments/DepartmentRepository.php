@@ -5,6 +5,7 @@ namespace App\Repository\Departments;
 use App\Models\Department;
 use App\Models\Employee;
 use App\Models\Fee;
+use App\Http\Requests\DepartmentRequest;
 class DepartmentRepository implements DepartmentRepositoryInterface{
 
     public function GetDepartments()
@@ -13,11 +14,11 @@ class DepartmentRepository implements DepartmentRepositoryInterface{
         return view('pages.departments.index', compact('departments'));
     }
 
-    public function StoreDepartments($request)
+    public function StoreDepartments(DepartmentRequest $request)
     {
 
         try {
-
+            $validated = $request->validated();
             $departments = new Department();
             $departments->name = ['en' => $request->name_en, 'ar' => $request->name];
             $departments->description = $request->description;
@@ -31,11 +32,11 @@ class DepartmentRepository implements DepartmentRepositoryInterface{
 
     }
 
-    public function UpdateDepartments($request)
+    public function UpdateDepartments(DepartmentRequest $request)
     {
 
         try{
-
+            $validated = $request->validated();
             $departments = Department::findorfail($request->id);
             $departments->name = ['en' => $request->name_en, 'ar' => $request->name];
             $departments->description = $request->description;

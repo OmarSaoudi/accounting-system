@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Repository\Accountants;
+use App\Http\Requests\AccountantRequest;
 
 interface AccountantRepositoryInterface{
 
@@ -11,7 +12,7 @@ interface AccountantRepositoryInterface{
   public function CreateAccountants();
 
   // StoreAccountants
-  public function StoreAccountants($request);
+  public function StoreAccountants(AccountantRequest $request);
 
   // ShowAccountants
   public function ShowAccountants($id);
@@ -20,7 +21,7 @@ interface AccountantRepositoryInterface{
   public function EditAccountants($id);
 
   // UpdateAccountants
-  public function UpdateAccountants($request);
+  public function UpdateAccountants(AccountantRequest $request);
 
   // DeleteAccountants
   public function DeleteAccountants($request);

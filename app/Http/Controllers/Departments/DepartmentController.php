@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Department;
 use Illuminate\Http\Request;
+use App\Http\Requests\DepartmentRequest;
 use App\Repository\Departments\DepartmentRepositoryInterface;
 
 class DepartmentController extends Controller
@@ -23,12 +24,12 @@ class DepartmentController extends Controller
         return $this->Department->GetDepartments();
     }
 
-    public function store(Request $request)
+    public function store(DepartmentRequest $request)
     {
         return $this->Department->StoreDepartments($request);
     }
 
-    public function update(Request $request)
+    public function update(DepartmentRequest $request)
     {
         return $this->Department->UpdateDepartments($request);
     }
