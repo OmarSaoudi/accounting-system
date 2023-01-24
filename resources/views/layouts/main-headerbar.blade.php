@@ -22,6 +22,25 @@
 
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
+        <li class="dropdown tasks-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              @if (App::getLocale() == 'ar'){{ LaravelLocalization::getCurrentLocaleName() }} <img src="{{ URL::asset('assets/images/flags/DZ.png') }}" alt="">
+              @else {{ LaravelLocalization::getCurrentLocaleName() }} <img src="{{ URL::asset('assets/images/flags/US.png') }}" alt="">
+              @endif
+            <ul class="dropdown-menu" style="width:20%;text-align:center">
+              <li>
+                  <ul class="menu">
+                      @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li>
+                          <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                              {{ $properties['native'] }}
+                          </a>
+                        </li>
+                      @endforeach
+                  </ul>
+              </li>
+            </ul>
+        </li>
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <img src="{{ URL::asset('assets/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
