@@ -39,10 +39,6 @@
                 <th>Name</th>
                 <th>Department</th>
                 <th>Activity</th>
-                <th>NIF</th>
-                <th>NIC</th>
-                <th>RCN</th>
-                <th>ART</th>
                 <th>Wilaya</th>
                 <th>Address</th>
                 <th>Phone</th>
@@ -58,10 +54,6 @@
                 <td>{{ $employee->name }}</td>
                 <td>{{ $employee->department->name }}</td>
                 <td>{{ $employee->activity }}</td>
-                <td>{{ $employee->nif }}</td>
-                <td>{{ $employee->nic }}</td>
-                <td>{{ $employee->rcn }}</td>
-                <td>{{ $employee->art }}</td>
                 <td>{{ $employee->wilaya->name }}</td>
                 <td>{{ $employee->address }}</td>
                 <td>{{ $employee->phone }}</td>
@@ -99,10 +91,6 @@
                 <th>Name</th>
                 <th>Department</th>
                 <th>Activity</th>
-                <th>NIF</th>
-                <th>NIC</th>
-                <th>RCN</th>
-                <th>ART</th>
                 <th>Wilaya</th>
                 <th>Address</th>
                 <th>Phone</th>

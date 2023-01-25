@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="{{ URL::asset('assets/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
 <!-- bootstrap wysihtml5 - text editor -->
 <link rel="stylesheet" href="{{ URL::asset('assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
+<link rel="stylesheet" href="{{ URL::asset('assets/bower_components/select2/dist/css/select2.min.css') }}">
 
 @if (app()->getLocale() == 'ar')
 <link rel="stylesheet" href="{{ URL::asset('assets/bower_components/font-awesome/css/font-awesome-rtl.min.css') }}">

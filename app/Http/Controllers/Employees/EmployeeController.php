@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use App\Repository\Employees\EmployeeRepositoryInterface;
+use App\Http\Requests\EmployeeRequest;
 
 
 class EmployeeController extends Controller
@@ -29,7 +30,7 @@ class EmployeeController extends Controller
         return $this->Employee->CreateEmployees();
     }
 
-    public function store(Request $request)
+    public function store(EmployeeRequest $request)
     {
         return $this->Employee->StoreEmployees($request);
     }
@@ -44,7 +45,7 @@ class EmployeeController extends Controller
         return $this->Employee->EditEmployees($id);
     }
 
-    public function update(Request $request)
+    public function update(EmployeeRequest $request)
     {
         return $this->Employee->UpdateEmployees($request);
     }

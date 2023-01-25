@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Repository\Employees;
+use App\Http\Requests\EmployeeRequest;
 
 interface EmployeeRepositoryInterface{
 
@@ -11,7 +12,7 @@ interface EmployeeRepositoryInterface{
   public function CreateEmployees();
 
   // StoreEmployees
-  public function StoreEmployees($request);
+  public function StoreEmployees(EmployeeRequest $request);
 
   // ShowEmployees
   public function ShowEmployees($id);
@@ -20,7 +21,7 @@ interface EmployeeRepositoryInterface{
   public function EditEmployees($id);
 
   // UpdateEmployees
-  public function UpdateEmployees($request);
+  public function UpdateEmployees(EmployeeRequest $request);
 
   // DeleteEmployees
   public function DeleteEmployees($request);

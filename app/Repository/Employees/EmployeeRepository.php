@@ -7,7 +7,7 @@ use App\Models\Wilaya;
 use App\Models\Department;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
-
+use App\Http\Requests\EmployeeRequest;
 
 class EmployeeRepository implements EmployeeRepositoryInterface{
 
@@ -25,7 +25,7 @@ class EmployeeRepository implements EmployeeRepositoryInterface{
         return view('pages.employees.create',$data);
     }
 
-    public function StoreEmployees($request)
+    public function StoreEmployees(EmployeeRequest $request)
     {
 
 
@@ -78,7 +78,7 @@ class EmployeeRepository implements EmployeeRepositoryInterface{
         return view('pages.employees.edit',$data, compact('employees'));
     }
 
-    public function UpdateEmployees($request)
+    public function UpdateEmployees(EmployeeRequest $request)
     {
         try{
             $employees = Employee::findorfail($request->id);
