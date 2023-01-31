@@ -50,6 +50,7 @@ class AccountantRepository implements AccountantRepositoryInterface{
 
 
             DB::commit();
+            toastr()->success('Accountant Has Been Added Successfully!', ['timeOut' => 3000]);
             return redirect()->route('accountants.index');
 
         }
@@ -93,6 +94,7 @@ class AccountantRepository implements AccountantRepositoryInterface{
             $accountants->status = $request->status;
             $accountants->days()->sync($request->days);
             $accountants->save();
+            toastr()->success('Accountant Has Been Modified Successfully!', ['timeOut' => 3000]);
             return redirect()->route('accountants.index');
         }
 
@@ -106,6 +108,7 @@ class AccountantRepository implements AccountantRepositoryInterface{
 
         try {
             Accountant::destroy($request->id);
+            toastr()->error('Accountant Has Been Deleted Successfully!', ['timeOut' => 3000]);
             return redirect()->route('accountants.index');
         }
 

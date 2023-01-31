@@ -5,7 +5,8 @@
 @stop
 
 @section('css')
-<link rel="stylesheet" href="{{ URL::asset('assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+  @toastr_css
+  <link rel="stylesheet" href="{{ URL::asset('assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
 @endsection
 
 @section('content')
@@ -216,6 +217,8 @@
 @endsection
 
 @section('scripts')
+@toastr_js
+@toastr_render
 <script src="{{ URL::asset('assets/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ URL::asset('assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
 <script>$('.form-department').validator();</script>
@@ -240,3 +243,4 @@
     });
 </script>
 @endsection
+

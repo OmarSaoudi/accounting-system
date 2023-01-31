@@ -45,7 +45,6 @@
                 <th>Address</th>
                 <th>Phone</th>
                 <th>Joining Date</th>
-                <th>Operation</th>
               </tr>
               </thead>
               <tbody>
@@ -63,26 +62,7 @@
                 <td>{{ $employee->address }}</td>
                 <td>{{ $employee->phone }}</td>
                 <td>{{ $employee->joining_date }}</td>
-                <td>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-success btn-flat">Operation</button>
-                        <button type="button" class="btn btn-success btn-flat dropdown-toggle" data-toggle="dropdown">
-                          <span class="caret"></span>
-                          <span class="sr-only">Toggle Dropdown</span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="{{ route('employees.edit',$employee->id) }}" aria-pressed="true"><i style="color:blue" class="fa fa-edit"></i> Edit Employee</a></li>
-                          <li><a href="{{ route('employees.show',$employee->id) }}"><i style="color:rgb(76, 132, 134)" class="fa fa-eye"></i> Show Employee</a></li>
-                          <li><a data-toggle="modal" data-target="#DeleteEmployee{{ $employee->id }}"><i style="color:rgb(255, 0, 0)" class="fa fa-trash"></i> Delete Employee</a></li>
-                          <li><a href="{{ route('fee_invoices.show', $employee->id) }}" aria-pressed="true"><i style="color:rgb(1, 255, 22)" class="fa fa-money"></i> Employee Fees</a></li>
-                          <li><a href="{{ route('receipt_employees.show', $employee->id) }}" aria-pressed="true"><i style="color:rgb(207, 121, 174)" class="fa fa-money"></i> Receipt Employee</a></li>
-                          <li><a href="{{ route('processing_fees.show', $employee->id) }}" aria-pressed="true"><i style="color:rgb(255, 166, 0)" class="fa fa-money"></i> Processing Fees Employee</a></li>
-                          <li><a href="{{ route('payment_employees.show', $employee->id) }}" aria-pressed="true"><i style="color:rgb(0, 0, 0)" class="fa fa-money"></i> Payment Employee</a></li>
-                        </ul>
-                    </div>
-                </td>
               </tr>
-              @include('pages.employees.delete')
               @endforeach
               </tbody>
               <tfoot>
@@ -99,7 +79,6 @@
                 <th>Address</th>
                 <th>Phone</th>
                 <th>Joining Date</th>
-                <th>Operation</th>
               </tr>
               </tfoot>
             </table>

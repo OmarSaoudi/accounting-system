@@ -23,6 +23,7 @@ class DepartmentRepository implements DepartmentRepositoryInterface{
             $departments->name = ['en' => $request->name_en, 'ar' => $request->name];
             $departments->description = $request->description;
             $departments->save();
+            toastr()->success('Department Has Been Added Successfully!', ['timeOut' => 3000]);
             return redirect()->route('departments.index');
         }
 
@@ -41,6 +42,7 @@ class DepartmentRepository implements DepartmentRepositoryInterface{
             $departments->name = ['en' => $request->name_en, 'ar' => $request->name];
             $departments->description = $request->description;
             $departments->save();
+            toastr()->success('Department Has Been Modified Successfully!', ['timeOut' => 3000]);
             return redirect()->route('departments.index');
         }
 
@@ -58,9 +60,11 @@ class DepartmentRepository implements DepartmentRepositoryInterface{
 
             if($employees->count() == 0 && $fees->count() == 0){
                 $departments = Department::findOrFail($request->id)->delete();
+                toastr()->error('Department Has Been Deleted Successfully!', ['timeOut' => 3000]);
                 return redirect()->route('departments.index');
             }
             else{
+                toastr()->warning('There Are Common Elements With This Department!', ['timeOut' => 3000]);
                 return redirect()->route('departments.index');
             }
         }
@@ -75,6 +79,7 @@ class DepartmentRepository implements DepartmentRepositoryInterface{
     {
         $delete_all_id = explode(",", $request->delete_all_id);
         Department::whereIn('id', $delete_all_id)->delete();
+        toastr()->error('Departments Has Been Deleted Successfully!', ['timeOut' => 3000]);
         return redirect()->route('departments.index');
     }
 
